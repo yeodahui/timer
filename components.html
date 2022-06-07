@@ -1,0 +1,71 @@
+<style>
+  @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+
+  * {
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui,
+      Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo",
+      "Noto Sans KR", "Malgun Gothic", sans-serif;
+  }
+
+  /* buttons */
+  [class^="button"] {
+    width: 112px;
+    padding: 16px;
+    line-height: 16px;
+    border-radius: 50px;
+    border: 0;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  [class^="button"][class$="disabled"] {
+    background-color: #324577;
+    color: #617199;
+  }
+
+  [class^="button"]::before {
+    content: "";
+    display: inline-block;
+    margin-right: 5px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    vertical-align: bottom;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  .button-start {
+    background-color: #5180ff;
+  }
+  .button-pause {
+    background-color: #15c2b8;
+  }
+  .button-reset {
+    background-color: #fb7099;
+  }
+
+  .button-start::before {
+    background-image: url(images/icon/icon-start.svg);
+  }
+  .button-start-disabled::before {
+    background-image: url(images/icon/icon-start-disabled.svg);
+  }
+  .button-pause::before {
+    background-image: url(images/icon/icon-stop.svg);
+  }
+  .button-reset::before {
+    background-image: url(images/icon/icon-reset.svg);
+  }
+  .button-reset-disabled::before {
+    background-image: url(images/icon/icon-reset-disabled.svg);
+  }
+</style>
+
+<button type="button" class="button-start">START</button>
+<button type="button" class="button-start-disabled">START</button>
+<button type="button" class="button-pause">PAUSE</button>
+<button type="button" class="button-reset">RESET</button>
+<button type="button" class="button-reset-disabled">RESET</button>
