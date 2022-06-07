@@ -69,3 +69,72 @@
 <button type="button" class="button-pause">PAUSE</button>
 <button type="button" class="button-reset">RESET</button>
 <button type="button" class="button-reset-disabled">RESET</button>
+
+<br />
+<br />
+
+box
+
+<style>
+  /* timebox */
+  .container-timebox {
+    width: 80px;
+    box-sizing: border-box;
+  }
+  .title-timebox {
+    display: block;
+    margin-bottom: 4px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: #a5b6ee;
+  }
+  .box-timebox {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: solid 1px #354971;
+    background: linear-gradient(to bottom right, #4c65a0, #304577);
+  }
+  .box-timebox::before,
+  .box-timebox::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 16px;
+    height: 1px;
+    background-color: #354971;
+  }
+  .box-timebox::before {
+    left: 0;
+  }
+  .box-timebox::after {
+    right: 0;
+  }
+  .input-timebox {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background-color: transparent;
+    color: #fff;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui,
+      Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo",
+      "Noto Sans KR", "Malgun Gothic", sans-serif;
+  }
+</style>
+
+<div class="container-timebox">
+  <label for="sec" class="title-timebox">HRS</label>
+  <div class="box-timebox">
+    <input type="text" id="sec" class="input-timebox" value="00" />
+  </div>
+</div>
