@@ -53,14 +53,8 @@ function renderPage(root) {
 
     const div = document.createElement("div");
     div.setAttribute("class", "box-timebox");
-
-    const input = document.createElement("input");
-    input.setAttribute("type", "text");
-    input.setAttribute("value", "00");
-    input.setAttribute("id", `${i}`);
-    input.setAttribute("class", "input-timebox");
-
-    div.appendChild(input);
+    div.setAttribute("id", `${i}`);
+    div.textContent = "00";
 
     timeBox.append(label, div);
     timeSet.append(timeBox);

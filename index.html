@@ -16,10 +16,31 @@
 
       const timeSet = root.querySelector(".container-timeset");
 
-      timeSet.addEventListener("onchange", event => {
-        /*
-        타이머 숫자 변경되어 00:00:00이 아닐 시 start, reset 버튼 활성화
-        */
+      timeSet.addEventListener("click", event => {
+        if (event.target.classList.contains("box-timebox")) {
+          let temp = event.target.textContent;
+          let amount;
+
+          if (event.target.id === "SEC") {
+            amount = 10;
+          } else {
+            amount = 1;
+          }
+
+          temp = +temp + +amount;
+
+          if (temp >= 60) {
+            // 60 이상이 되면 00으로 표시
+            event.target.textContent = `00`;
+          } else {
+            if (temp < 10) {
+              // 10 이하는 두 자리로 표시
+              event.target.textContent = `0${temp}`;
+            } else {
+              event.target.textContent = `${temp}`;
+            }
+          }
+        }
       });
     </script>
   </body>
