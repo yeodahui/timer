@@ -19,10 +19,12 @@
 }
 
 /* style */
-#root {
+body {
   width: 100vw;
   height: 100vh;
   background-image: linear-gradient(to right, #f0f4ff, #a5b6ee);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 /* header */
@@ -39,7 +41,7 @@
 
 /* main */
 .container-timer {
-  width: 400px;
+  max-width: 400px;
   margin: 0 auto 60px;
   padding: 48px 44px 40px;
   border-radius: 16px;
@@ -92,12 +94,24 @@
 }
 .box-timebox {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: 100%;
   height: 80px;
-  border-radius: 4px;
   overflow: hidden;
+
   border: solid 1px #354971;
+  border-radius: 4px;
+
   background: linear-gradient(to bottom right, #4c65a0, #304577);
+
+  font-size: 40px;
+  font-weight: 700;
+  color: #fff;
+
+  cursor: pointer;
 }
 .box-timebox::before,
 .box-timebox::after {
@@ -106,7 +120,7 @@
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
-  width: 16px;
+  width: 14px;
   height: 1px;
   background-color: #354971;
 }
@@ -115,21 +129,6 @@
 }
 .box-timebox::after {
   right: 0;
-}
-.input-timebox {
-  position: relative;
-  z-index: 10;
-  width: 100%;
-  height: 100%;
-  border: 0;
-  background-color: transparent;
-  color: #fff;
-  text-align: center;
-  font-size: 40px;
-  font-weight: 700;
-  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto,
-    "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR",
-    "Malgun Gothic", sans-serif;
 }
 
 /* buttons */
@@ -147,6 +146,7 @@
   font-size: 14px;
   font-weight: 700;
   color: #fff;
+  cursor: pointer;
 }
 
 [class^="button"]:first-child {
@@ -156,6 +156,7 @@
 [class^="button"][class$="disabled"] {
   background-color: #324577;
   color: #617199;
+  cursor: not-allowed;
 }
 
 [class^="button"]::before {
@@ -195,4 +196,20 @@
 }
 .button-reset-disabled::before {
   background-image: url(images/icon/icon-reset-disabled.svg);
+}
+
+@media screen and (max-width: 900px) {
+  .wrapper {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 325px) {
+  [class^="button"] {
+    width: 100%;
+    margin-right: 0px;
+  }
+  [class^="button"]:first-child {
+    margin-bottom: 10px;
+  }
 }
